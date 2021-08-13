@@ -9,6 +9,10 @@
 h1 {
   color: #8B0000;
 }
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
 .itembox {
   background-color: white;
   color: black;
@@ -42,7 +46,11 @@ h1 {
 </style>
 </head>
 <body>
-	<h1>THE SILK ROAD</h1>
+    <div class="heading">
+       <h1>THE SILK ROAD</h1>
+   	   <p style="text-align: right">Login Username: ${user.username}</p>
+    </div>
+    
 	<div class="topnav">
 	  <a class="active" href="home_page.jsp">Home</a>
 	  <a href="#buy">Buy</a>

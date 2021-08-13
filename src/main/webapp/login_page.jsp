@@ -7,6 +7,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
+		<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
 		<style>
 			h1 {text-align: center; 
 				color: #8B0000;
@@ -25,17 +31,16 @@
 		LOGIN PAGE <!-- the usual HTML way -->
 	
 	<br>
-		<form method="get" action="login_check2.jsp">
-			<table>
-				<tr>    
-					<td>Username</td><td><input type="text" name="username"></td>
-				</tr>
-				<tr>
-					<td>Password</td><td><input type="text" name="password"></td>
-				</tr>
-			</table>
-			<input type="submit" value="Login">
-		</form>
+		<form action="login_page" method="post">
+            <label for="username">Username:</label>
+            <input name="username" size="30" />
+            <br><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" size="30" />
+            <br>${message}
+            <br><br>           
+            <button type="submit">Login</button>
+        </form>
 	<br>
 	
 	

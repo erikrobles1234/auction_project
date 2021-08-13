@@ -36,8 +36,30 @@
 				out.print("Incorrect username and/or password");
 		        break label;
 		      } else {
+				// Get session creation time.
+				Date createTime = new Date(session.getCreationTime());
+				
+				// Get last access time of this Webpage.
+				Date lastAccessTime = new Date(session.getLastAccessedTime());
+				
+				String title = "Welcome Back to my website";
+				Integer visitCount = new Integer(0);
+				String visitCountKey = new String("visitCount");
+				String userIDKey = new String("userID");
+				String userID = new String("ABCD");
+				
+				// Check if this is new comer on your Webpage.
+				if (session.isNew() ){
+				   title = "Welcome to my website";
+				   session.setAttribute(userIDKey, userID);
+				   session.setAttribute(visitCountKey,  visitCount);
+				} 
+				visitCount = (Integer)session.getAttribute(visitCountKey);
+				visitCount = visitCount + 1;
+				userID = (String)session.getAttribute(userIDKey);
+				session.setAttribute(visitCountKey,  visitCount);
 	%>
-	<jsp:forward page="home.jsp" />
+	<jsp:forward page="home_page.jsp" />
 	<%
 		}
 			//close the connection.
