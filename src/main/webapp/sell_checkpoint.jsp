@@ -29,8 +29,8 @@
 		String description = request.getParameter("description");
 
 		//Make an insert statement for the Sells table:
-		String insert = "INSERT INTO users (user_id, dname, app, country, reserve, description)"
-				+ "VALUES (?, ?, ?, ?, ?, ?)";
+		String insert = "INSERT INTO narcotics (user_id, dname, application, country, description) "
+				+ "VALUES(?, ?, ?, ?, ?)";
 		//Create a Prepared SQL statement allowing you to introduce the parameters of the query
 		PreparedStatement ps = con.prepareStatement(insert);
 
@@ -39,8 +39,7 @@
 		ps.setString(2, dname);
 		ps.setString(3, app);
 		ps.setString(4, country);
-		ps.setString(5, reserve);
-		ps.setString(6, description);
+		ps.setString(5, description);
 		//Run the query against the DB
 		ps.executeUpdate();
 

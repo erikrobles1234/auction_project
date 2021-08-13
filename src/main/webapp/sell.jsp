@@ -94,7 +94,7 @@ body {
 </div>
 
 <!-- change action_page.php to the .jsp page you want to send inputs to -->
-<form action="sell_check.jsp">
+<form action="sell_checkpoint.jsp">
   <p><b>Product Category</b></p>
     <select id="cat" required>
       <option value="Cannabis">Cannabis</option>
