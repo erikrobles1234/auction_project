@@ -53,12 +53,11 @@ h1 {
 	<div class="topnav">
 	  <a class="active" href="home_page.jsp">Home</a>
 	  <a href="#buy">Buy</a>
-	  <a href="#sell">Sell</a>
+	  <a href="sell.jsp">Sell</a>
 	</div>
 	
 	<div class="itembox">
 	<h2>LSD</h2>
-	<p>${user.username}</p>
 	<p>Price: $29.98</p>
 	<p>Strength: 8</p>
 	<p>Country of Origin: Canada</p>
