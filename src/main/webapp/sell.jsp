@@ -94,15 +94,15 @@ body {
 </div>
 
 <!-- change action_page.php to the .jsp page you want to send inputs to -->
-<form action="/action_page.php">
+<form action="sell_check.jsp">
   <p><b>Product Category</b></p>
-    <select name="cat" id="cat" required>
+    <select id="cat" required>
       <option value="Cannabis">Cannabis</option>
       <option value="Analgesics">Analgesics</option>
       <option value="Hallucinogens">Hallucinogens</option>
     </select>
   <p><b>Name of Product</b></p>
-    <input type="text" id="fname" name="fname" required><br>
+    <input type="text" id="dname" name="dname" required><br>
   <p><b>Application</b></p>
     <input type="radio" id="smoke" name="app" value="Smokable" required>
     <label for="smoke">Smokable</label><br>
@@ -111,7 +111,7 @@ body {
     <input type="radio" id="edible" name="app" value="Edible" required>
     <label for="edible">Edible</label><br>
     <input type="radio" id="inject" name="app" value="Injectable" required>
-    <label for="inject">Injectable</label>
+    <label for="inject">Injectable</label>app
   <p><b>Country of Origin</b></p>
     <input type="radio" id="us" name="country" value="US" required>
     <label for="us">United States</label><br>
@@ -120,7 +120,7 @@ body {
     <input type="radio" id="mexico" name="country" value="Mexico" required>
     <label for="mexico">Mexico</label>
   <p><b>Reserve Price</b> (USD)</p>
-    <input type="number" min="1.00" max="10000.00" step="0.01" required/>
+    <input type="number" name="reserve" min="1.00" max="10000.00" step="0.01" required/>
   <p><b>Description</b></p>
     <textarea rows = "5" cols = "60" name = "description" required>
     </textarea>

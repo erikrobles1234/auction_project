@@ -48,6 +48,7 @@ h1 {
     <div class="heading">
        <h1>THE SILK ROAD</h1>
    	   <p style="text-align: right">Login Username: ${user.username}</p>
+   	   <p style="text-align: right">Login UserID: ${user.id}</p>
     </div>
     
 	<div class="topnav">
