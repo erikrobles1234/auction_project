@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" isELIgnored="false" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,6 +58,7 @@ h1 {
 	
 	<div class="itembox">
 	<h2>LSD</h2>
+	<p>${user.username}</p>
 	<p>Price: $29.98</p>
 	<p>Strength: 8</p>
 	<p>Country of Origin: Canada</p>
