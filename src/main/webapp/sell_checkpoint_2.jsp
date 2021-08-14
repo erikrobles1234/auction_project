@@ -4,11 +4,72 @@
 <%@ page import="java.io.*,java.util.*,java.sql.*"%>
 <%@ page import="javax.servlet.http.*,javax.servlet.*" %>
 
+<!DOCTYPE html>
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>param sender</title>
+<style>
+h1 {
+  color: #8B0000;
+  font-family: Impact, fantasy;
+  font-size: 300%;
+  margin: 5px;
+  padding: 10px;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
+.itembox {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px;
+}
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  width: 100px;
+}
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #8B0000;
+  color: white;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: #f1f1f1;
+}
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+</style>
 </head>
+
 <body>
 	<%
 	try {
@@ -107,10 +168,42 @@
 	}
 %>
 
-			<br>
-			<form method="get" action="home_page.jsp">
-				<input type="submit" value="Return to home">
-			</form>
-			<br>
+
+<div class="heading">
+       <h1>THE SILK ROAD</h1>
+   	   <p style="text-align: right">Login Username: ${user.username}</p>
+</div>
+
+<div class="topnav">
+  <a href="home_page.jsp">Home</a>
+  <a href="#buy">Buy</a>
+  <a class="active" href="sell.jsp">Sell</a>
+</div>
+
+<h2 style="color:black">Auction Off Product</h2>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <h3>Create Product</h3>
+      <p>Select the category of product you wish to put on auction</p>
+      <p style="padding-bottom:10px"> 
+    </div>
+  </div>
+</div>
+
+<form action="sell_checkpoint3.jsp">
+  <p><b>Closing Date and Time</b></p>
+    <label for="birthdaytime">Date/Time when auction closes:</label>
+    <input type="datetime-local" min="2021-08-15T12:00:00" id="birthdaytime" name="birthdaytime">
+    <input type="submit">
+  <p><b>Reserve Price</b> (USD)</p>
+  	<label for="reserve">min. reserve is $1.01</label>
+    <input type="number" id="reserve" name="reserve" min="1.01" max="10000.00" step="0.01" required/>
+  <br>
+  <br>
+  <input type="submit" value="Submit">
+</form>
+
 </body>
 </html>

@@ -53,7 +53,7 @@ h1 {
     
 	<div class="topnav">
 	  <a class="active" href="home_page.jsp">Home</a>
-	  <a href="#buy">Buy</a>
+	  <a href="buy.jsp">Buy</a>
 	  <a href="sell.jsp">Sell</a>
 	</div>
 	
