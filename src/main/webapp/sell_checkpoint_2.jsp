@@ -121,7 +121,7 @@ body {
 			String class_type = request.getParameter("class");
 			
 			//Make an insert statement for the Sells table:
-			String insert = "INSERT INTO cannabis (drug_id, strength, class, pharma_grade) "
+			String insert = "INSERT INTO analgesics (drug_id, strength, class, pharma_grade) "
 					+ "VALUES(?, ?, ?, ?)";
 			//Create a Prepared SQL statement allowing you to introduce the parameters of the query
 			PreparedStatement ps2 = con.prepareStatement(insert);
@@ -142,7 +142,7 @@ body {
 			String hallstrength = request.getParameter("hstr");
 			
 			//Make an insert statement for the Sells table:
-			String insert = "INSERT INTO cannabis (drug_id, type, natsynth, hallstrength) "
+			String insert = "INSERT INTO hallucinogens (drug_id, type, natsynth, hallstrength) "
 					+ "VALUES(?, ?, ?, ?)";
 			//Create a Prepared SQL statement allowing you to introduce the parameters of the query
 			PreparedStatement ps2 = con.prepareStatement(insert);
@@ -194,9 +194,8 @@ body {
 
 <form action="sell_checkpoint3.jsp">
   <p><b>Closing Date and Time</b></p>
-    <label for="birthdaytime">Date/Time when auction closes:</label>
-    <input type="datetime-local" min="2021-08-15T12:00:00" id="birthdaytime" name="birthdaytime">
-    <input type="submit">
+    <label for="daytime">Date/Time when auction closes:</label>
+    <input type="datetime-local" min="2021-08-15T12:00:00" id="daytime" name="daytime">
   <p><b>Reserve Price</b> (USD)</p>
   	<label for="reserve">min. reserve is $1.01</label>
     <input type="number" id="reserve" name="reserve" min="1.01" max="10000.00" step="0.01" required/>
