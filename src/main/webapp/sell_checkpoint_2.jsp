@@ -176,8 +176,9 @@ body {
 
 <div class="topnav">
   <a href="home_page.jsp">Home</a>
-  <a href="#buy">Buy</a>
+  <a href="buy.jsp">Buy</a>
   <a class="active" href="sell.jsp">Sell</a>
+  <a href="qna.jsp">FAQ</a>
 </div>
 
 <h2 style="color:black">Auction Off Product</h2>

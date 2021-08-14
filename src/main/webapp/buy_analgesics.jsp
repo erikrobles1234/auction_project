@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" import="com.cs336.pkg.*"%>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
+
 <!DOCTYPE html>
 <html>
 
@@ -86,12 +90,14 @@ body {
 </head>
 
 <body>
+
 <h1>THE SILK ROAD</h1>
 
 <div class="topnav">
   <a href="home_page.jsp">Home</a>
   <a class="active" href="buy.jsp">Buy</a>
   <a href="sell.jsp">Sell</a>
+  <a href="qna.jsp">FAQ</a>
 </div>
 
 <h2 style="color:black">Products On Auction</h2>
@@ -127,42 +133,125 @@ body {
     </div>
   </div>
 </div>
-
+<br>
 <br>
 
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <h3>Card 1</h3>
-      <p>Some text</p>
-      <p>Some text</p>
-    </div>
-  </div>
+<%
+     List<String> list = new ArrayList<String>();
 
-  <div class="column">
-    <div class="card">
-      <h3>Card 2</h3>
-      <p>Some text</p>
-      <p>Some text</p>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <h3>Card 3</h3>
-      <p>Some text</p>
-      <p>Some text</p>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <h3>Card 4</h3>
-      <p>Some text</p>
-      <p>Some text</p>
-    </div>
-  </div>
-</div>
+     try {
+
+             //Get the database connection
+             ApplicationDB db = new ApplicationDB();
+             Connection con = db.getConnection();   
+
+             //Create a SQL statement
+             Statement stmt = con.createStatement();
+             //Get the combobox from the index.jsp
+             String entity = request.getParameter("price");
+             //Make a SELECT query from the sells table with the price range specified by the 'price' parameter at the index.jsp
+             String str = "SELECT * FROM ebay.auction JOIN ebay.narcotics ON auction.drug_id = narcotics.drug_id JOIN ebay.analgesics ON narcotics.drug_id = analgesics.drug_id";
+             //Run the query against the database.
+             ResultSet result = stmt.executeQuery(str);
+
+             //Make an HTML table to show the results in:
+             out.print("<table>");
+
+             //make a row
+             out.print("<tr>");
+             //make a column
+             out.print("<td>");
+             //print out column header
+             out.print("Drug Name");
+             out.print("</td>");
+             //make a column
+             out.print("<td>");
+             out.print("Application");
+             out.print("</td>");
+             //make a column
+             out.print("<td>");
+             out.print("Country");
+             out.print("</td>");
+             //make a column
+             out.print("<td>");
+             out.print("Description");
+             out.print("</td>");
+             //make a column
+             out.print("<td>");
+             out.print("Stength");
+             out.print("</td>");
+             //make a column
+             out.print("<td>");
+             out.print("Class");
+             out.print("</td>");
+             //make a column
+             out.print("<td>");
+             out.print("Pharma Grade?");
+             out.print("</td>");
+             //make a column
+             out.print("<td>");
+             out.print("Current Bid");
+             out.print("</td>");
+             //make a column
+             out.print("<td>");
+             out.print("Close Date");
+             out.print("</td>");
+             out.print("</tr>");
+
+
+             //parse out the results
+             while (result.next()) {
+                     //make a row
+                     out.print("<tr>");
+                     //make a column
+                     out.print("<td>");
+                     //Print out current bar name:
+                     out.print(result.getString("dname"));
+                     out.print("</td>");
+                     out.print("<td>");
+                     //Print out current beer name:
+                     out.print(result.getString("application"));
+                     out.print("</td>");
+                     out.print("<td>");
+                     //Print out current price
+                     out.print(result.getString("country"));
+                     out.print("</td>");
+                     out.print("</tr>");
+                     //Print out current price
+                     out.print(result.getString("description"));
+                     out.print("</td>");
+                     out.print("</tr>");
+                     //Print out current price
+                     out.print(result.getString("strength"));
+                     out.print("</td>");
+                     out.print("</tr>");
+                     //Print out current price
+                     out.print(result.getString("class"));
+                     out.print("</td>");
+                     out.print("</tr>");
+                     //Print out current price
+                     out.print(result.getString("pharma_grade"));
+                     out.print("</td>");
+                     out.print("</tr>");
+                     //Print out current price
+                     out.print(result.getString("current_bid"));
+                     out.print("</td>");
+                     out.print("</tr>");
+                     //Print out current price
+                     out.print(result.getString("closing_date"));
+                     out.print("</td>");
+                     out.print("</tr>");
+
+
+             }
+             out.print("</table>");
+
+             //close the connection.
+             con.close();
+
+     } catch (Exception e) {
+     }
+%>
 
 </body>
 
