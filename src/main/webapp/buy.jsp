@@ -56,7 +56,7 @@ body {
   padding: 0 10px;
 }
 .spec_col {
-  float: center;
+  float: left;
   width: 100%;
   padding: 0 10px;
 }
@@ -73,7 +73,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 40px;
   text-align: center;
-  background-color: #f1f1f1;
+  background-color: #8B0000;
 }
 .spec_card {
 
@@ -96,73 +96,30 @@ body {
 
 <h2 style="color:black">Products On Auction</h2>
 
-<div class="row">
-  <div class="spec_col">
-    <div class="spec_card">
-      <form action="sell_checkpoint_2.jsp">
-        <input id="page_type" name="page_type" type="hidden" value="Hallucinogens">
-        <p><b>Hallucinogenic Strength</b></p>
-          <select name="hstr" id="hstr" >
-            <option value="Cannabis">Very Weak</option>
-            <option value="Hallucinogens">Weak</option>
-            <option value="Analgesics">Average</option>
-            <option value="Cannabis">Bad Trip</option>
-          </select>
-        <p><b>Natural or Synthetic?</b></p>
-          <select name="natsynth" id="natsynth" >
-            <option value="Natural">Natural</option>
-            <option value="Synthetic">Synthetic</option>
-            <option value="Both">Both</option>
-          </select>
-        <p><b>Type</b></p>
-          <input type="radio" id="Psychedelics" name="type" value="Psychedelics" >
-          <label for="Psychedelics">Psychedelics</label><br>
-          <input type="radio" id="Dissociatives" name="type" value="Dissociatives" >
-          <label for="Dissociatives">Dissociatives</label><br>
-          <input type="radio" id="Deliriants" name="type" value="Deliriants" >
-          <label for="Deliriants">Deliriants</label><br>
-          <input type="radio" id="Designer Drugs" name="type" value="Designer Drugs" >
-          <label for="Designer Drugs">Designer Drugs</label>
-        <br>
-        <br>
-        <input type="submit" value="Filter">
-    </form>
-    </div>
-  </div>
-</div>
-
 <br>
 
 <div class="row">
   <div class="column">
     <div class="card">
-      <h3>Card 1</h3>
-      <p>Some text</p>
-      <p>Some text</p>
+      <form action="buy_cannabis.jsp">
+        <input type="submit" value="Browse Cannabis Products" />
+	  </form>
     </div>
   </div>
 
   <div class="column">
     <div class="card">
-      <h3>Card 2</h3>
-      <p>Some text</p>
-      <p>Some text</p>
+      <form action="buy_analgesics.jsp">
+        <input type="submit" value="Browse Analgesic Products" />
+	  </form>
     </div>
   </div>
   
   <div class="column">
     <div class="card">
-      <h3>Card 3</h3>
-      <p>Some text</p>
-      <p>Some text</p>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <h3>Card 4</h3>
-      <p>Some text</p>
-      <p>Some text</p>
+      <form action="buy_hallucinogenics.jsp">
+        <input type="submit" value="Browse Hallucinogenic Products" />
+	  </form>
     </div>
   </div>
 </div>

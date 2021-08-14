@@ -89,9 +89,9 @@ body {
 <h1>THE SILK ROAD</h1>
 
 <div class="topnav">
-  <a class="active" href="home_page.jsp">Home</a>
-  <a href="#buy">Buy</a>
-  <a href="#sell">Sell</a>
+  <a href="home_page.jsp">Home</a>
+  <a class="active" href="buy.jsp">Buy</a>
+  <a href="sell.jsp">Sell</a>
 </div>
 
 <h2 style="color:black">Products On Auction</h2>
