@@ -6,10 +6,25 @@
 
 <html>
 <head>
+  <script>
+    function myFunction() {
+		String cat_redirect_value = request.getParameter("cat");
+		out.print(cat_redirect_value);
+		if (cat_redirect_value.equals("Cannabis")) {
+			String page_name = "sell_cannabis.jsp";
+		}
+		else if (cat_redirect_value.equals("Analgesics")) {
+			String page_name = "sell_analgesics.jsp";
+		}
+		else if (cat_redirect_value.equals("Hallucinogens")) {
+			String page_name = "sell_hallucinogen.jsp";
+		}
+    }
+  </script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>param sender</title>
 </head>
-<body>
+<body onload="myFunction()">
 	<%
 	try {
 
@@ -43,26 +58,26 @@
 		//Run the query against the DB
 		ps.executeUpdate();
 
-		//Close the connection. Don't forget to do it, otherwise you're keeping the resources of the server allocated.
-		con.close();
-		
 		String cat_redirect_value = request.getParameter("cat");
-		
-		if (cat_redirect_value == "Cannabis") {
+		out.print(cat_redirect_value);
+		if (cat_redirect_value.equals("Cannabis")) {
 			response.sendRedirect("sell_cannabis.jsp");
 		}
-		else if (cat_redirect_value == "Analgesics") {
+		else if (cat_redirect_value.equals("Analgesics")) {
 			response.sendRedirect("sell_analgesics.jsp");
 		}
-		else {
+		else if (cat_redirect_value.equals("Hallucinogens")) {
 			response.sendRedirect("sell_hallucinogen.jsp");
 		}
+		
+		//Close the connection. Don't forget to do it, otherwise you're keeping the resources of the server allocated.
+		con.close();
 		
 	} catch (Exception ex) {
 		out.print("New product could not be added, shits fucked.");
 	}
 %>
-
+			
 			<br>
 			<form method="get" action="home_page.jsp">
 				<input type="submit" value="Return to home">

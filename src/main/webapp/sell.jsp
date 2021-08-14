@@ -96,7 +96,7 @@ body {
 <!-- change action_page.php to the .jsp page you want to send inputs to -->
 <form action="sell_checkpoint.jsp">
   <p><b>Product Category</b></p>
-    <select id="cat" required>
+    <select id="cat" name="cat" required>
       <option value="Cannabis">Cannabis</option>
       <option value="Analgesics">Analgesics</option>
       <option value="Hallucinogens">Hallucinogens</option>
@@ -111,7 +111,7 @@ body {
     <input type="radio" id="edible" name="app" value="Edible" required>
     <label for="edible">Edible</label><br>
     <input type="radio" id="inject" name="app" value="Injectable" required>
-    <label for="inject">Injectable</label>app
+    <label for="inject">Injectable</label>
   <p><b>Country of Origin</b></p>
     <input type="radio" id="us" name="country" value="US" required>
     <label for="us">United States</label><br>
