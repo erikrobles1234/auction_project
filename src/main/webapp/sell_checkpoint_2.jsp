@@ -26,6 +26,7 @@
 		PreparedStatement ps = con.prepareStatement(query);
 		ps.setString(1, user_id);
 		ResultSet result = ps.executeQuery();
+		result.next();
         String drug_id = String.valueOf(result.getInt("drug_id"));
 		
 		//Check what the previous page drug type was

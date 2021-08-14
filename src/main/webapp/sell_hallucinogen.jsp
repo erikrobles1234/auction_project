@@ -92,7 +92,7 @@ body {
 </div>
 
 <!-- change action_page.php to the .jsp page you want to send inputs to -->
-<form action="/action_page.php">
+<form action="sell_checkpoint_2.jsp">
   <input id="page_type" name="page_type" type="hidden" value="Hallucinogens">
   <p><b>Hallucinogenic Strength</b></p>
     <select name="hstr" id="hstr" required>
