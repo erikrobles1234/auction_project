@@ -60,7 +60,7 @@ body {
 
     <div class="heading">
        <h1>THE SILK ROAD</h1>
-   	   <p style="text-align: right">Login Username: ${user.username}</p>
+   	   <p style="text-align: right"><a href="logout">Logout?</a> ${user.username}</p>
    	   <p style="text-align: right">Login UserID: ${user.id}</p>
     </div>
     
