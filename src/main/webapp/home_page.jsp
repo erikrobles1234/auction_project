@@ -1,4 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" isELIgnored="false" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="com.cs336.pkg.*"%>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +12,10 @@
 <style>
 h1 {
   color: #8B0000;
+  font-family: Impact, fantasy;
+  font-size: 300%;
+  margin: 5px;
+  padding: 10px;
 }
 .heading {
   display: flex;
@@ -42,9 +51,13 @@ h1 {
   background-color: #8B0000;
   color: white;
 }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 </style>
 </head>
 <body>
+
     <div class="heading">
        <h1>THE SILK ROAD</h1>
    	   <p style="text-align: right">Login Username: ${user.username}</p>
@@ -55,6 +68,7 @@ h1 {
 	  <a class="active" href="home_page.jsp">Home</a>
 	  <a href="buy.jsp">Buy</a>
 	  <a href="sell.jsp">Sell</a>
+      <a href="qna.jsp">FAQ</a>
 	</div>
 	
 	<div class="itembox">
@@ -64,5 +78,6 @@ h1 {
 	<p>Country of Origin: Canada</p>
 	<p>Natural/Synthetic: Synthetic</p>
 	</div>
+    
 </body>
 </html>
