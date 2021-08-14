@@ -93,6 +93,7 @@ body {
 
 <!-- change action_page.php to the .jsp page you want to send inputs to -->
 <form action="/action_page.php">
+  <input id="page_type" name="page_type" type="hidden" value="Cannabis">
   <p><b>Quality</b></p>
     <select name="quality" id="quality" required>
       <option value="Poor">Poor</option>
@@ -103,7 +104,7 @@ body {
   <p><b>Name of Strain</b></p>
     <input type="text" id="strain" name="strain" required><br>
   <p><b>THC %</b></p>
-    <input type="number" min="0.00" max="100.00" step="0.01" required/>
+    <input name="thc" type="number" min="0.00" max="100.00" step="0.01" required/>
   <br>
   <br>
   <input type="submit" value="Submit">

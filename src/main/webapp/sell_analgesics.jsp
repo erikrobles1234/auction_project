@@ -93,6 +93,7 @@ body {
 
 <!-- change action_page.php to the .jsp page you want to send inputs to -->
 <form action="/action_page.php">
+  <input id="page_type" name="page_type" type="hidden" value="Analgesics">
   <p><b>Strength</b></p>
     <select name="str" id="str" required>
       <option value="I still feel pain">I still feel pain (weakest)</option>

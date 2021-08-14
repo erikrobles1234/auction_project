@@ -45,12 +45,21 @@
 
 		//Close the connection. Don't forget to do it, otherwise you're keeping the resources of the server allocated.
 		con.close();
-
-		out.print("New product successfully added! :D");
+		
+		String cat_redirect_value = request.getParameter("cat");
+		
+		if (cat_redirect_value == "Cannabis") {
+			response.sendRedirect("sell_cannabis.jsp");
+		}
+		else if (cat_redirect_value == "Analgesics") {
+			response.sendRedirect("sell_analgesics.jsp");
+		}
+		else {
+			response.sendRedirect("sell_hallucinogen.jsp");
+		}
 		
 	} catch (Exception ex) {
-		out.print(ex);
-		out.print("New product could not be added, shits fucked");
+		out.print("New product could not be added, shits fucked.");
 	}
 %>
 
